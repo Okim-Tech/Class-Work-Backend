@@ -13,7 +13,9 @@ const PORT = process.env.PORT;
 index.use(express.json());
 index.use("/api/auth", userRoute);
 index.use("/api/product", ProductRoute);
-index.get("/", (req, res) => {});
+index.get("/", (req, res, next) => {
+  res.send("hello welcome to Okim's app");
+});
 
 index.listen(PORT, () => {
   console.log(`Server is runing on port ${PORT}`);
